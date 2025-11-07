@@ -31,7 +31,7 @@ To run this project, you'll need the following:
 
 2.  **Database Setup:**
     *   Create a new database in your MySQL/MariaDB server.
-    *   Update the `database.php` file in the `stok_gudang/` directory with your database credentials (hostname, username, password, database name).
+    *   Update the `database.php` file in the `tennarshoes/` directory with your database credentials (hostname, username, password, database name).
 
     ```php
     <?php
