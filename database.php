@@ -1,8 +1,8 @@
 <?php
 // database.php
 $host = "localhost";
-$user = "root";        // default XAMPP
-$pass = "";            // kosongkan jika tanpa password
+$user = "root";        
+$pass = "";            
 $db   = "tennarshoes";
 
 $conn = new mysqli($host, $user, $pass, $db);

@@ -50,11 +50,23 @@ include '../../database.php';
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(41, 84, 138, 0.2);
             margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .topbar h4 {
             font-weight: 600;
             margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .topbar .desc {
+            font-size: 14px;
+            color: #e3e8f0;
+            margin-top: 3px;
         }
 
         .btn-toggle {
@@ -100,12 +112,15 @@ include '../../database.php';
 <?php include '../../dashboard_gudang/sidebar_gudang.php'; ?>
 
 <div id="content">
-    <div class="topbar d-flex justify-content-between align-items-center">
+    <!-- 🔹 Header -->
+    <div class="topbar">
         <div class="d-flex align-items-center gap-3">
             <button class="btn btn-toggle d-lg-none" onclick="toggleSidebar()">
                 <i class="bi bi-list fs-4"></i>
             </button>
-            <h4><i class="bi bi-arrow-down-circle"></i> Input Barang Masuk</h4>
+            <div>
+                <h4><i class="bi bi-arrow-down-circle"></i> Input Barang Masuk</h4>
+            </div>
         </div>
 
         <div class="d-flex align-items-center gap-3">
@@ -114,16 +129,20 @@ include '../../database.php';
         </div>
     </div>
 
+    <!-- 🔹 Menu Pilihan Input -->
     <div class="container-fluid">
         <div class="row g-4 justify-content-center">
+            <!-- Supplier -->
             <div class="col-md-3">
-                <a href="supplier.php" class="text-decoration-none">
+                <a href="#" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#modalSupplier">
                     <div class="card-option">
                         <i class="bi bi-truck"></i>
                         <h5>Supplier</h5>
                     </div>
                 </a>
             </div>
+
+            <!-- Grosir -->
             <div class="col-md-3">
                 <a href="grosir.php" class="text-decoration-none">
                     <div class="card-option">
@@ -132,6 +151,8 @@ include '../../database.php';
                     </div>
                 </a>
             </div>
+
+            <!-- Retail -->
             <div class="col-md-3">
                 <a href="retail.php" class="text-decoration-none">
                     <div class="card-option">
@@ -140,6 +161,8 @@ include '../../database.php';
                     </div>
                 </a>
             </div>
+
+            <!-- Canvas -->
             <div class="col-md-3">
                 <a href="canvas.php" class="text-decoration-none">
                     <div class="card-option">
@@ -151,6 +174,8 @@ include '../../database.php';
         </div>
     </div>
 </div>
+
+<?php include 'form_input.php'; ?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
